@@ -1,4 +1,36 @@
-# Password-Strength-Evaluator
-This project is for a simple program that checks the strength of a given password. It checks if it is a common password, and evaluates its strength based on characters.
+# Password Strength Evaluator
 
-It requires a rockyou.txt file though, and I am working on uploading it.
+This program helps us to find out how strong a password is on a scale of 0 to 10.
+
+Created by [@A-Proper-programmer] (https://github.com/A-Proper-programmer).
+
+## Features
+- **Leaked:** Checks if the password is in a list of common passwords
+- **Variety:** Ranks password based on different varieties of charcters
+- **Length:** Also awards points based on length of the password
+
+## Requirements
+- Python 3.11.3
+- `os` module
+
+## Installation
+```bash
+git clone https://github.com/A-Proper-programmer/Python-Projects.git
+cd Python-Projects
+```
+
+## Usage
+```bash
+python Pswd_Safety_eval.py
+```
+
+## Project Structure
+```text
+project/
+├── Pswd_Safety_eval.py
+└── README.md
+```
+
+## Author and Credits
+Author [@A-Proper-programmer](https://github.com/A-Proper-programmer)
+rockyou.txt [@josuamarcelc](https://github.com/josuamarcelc)
