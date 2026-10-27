@@ -14,9 +14,10 @@ def password_leaked(pswd, _f):
                 passwords = pass_file.read().split("\n")                    # Converts txt file to a list
             if pswd in passwords:                                           # Checks if the password in a common wordlist
                 print("This password was found in a list of common passwords!")
-                return 0
+                return 1
         else:
             print(f"The file {_f} was not found!")
+    return 0
 
 def check_strength(pswd, _files):
     if password_leaked(pswd, _files):
