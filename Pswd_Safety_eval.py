@@ -9,23 +9,26 @@ def check_contains(string1, string2):       # Checks if string1 contains any cha
 def password_leaked(pswd, _f):
     for i in _f:
         path = os.path.join(os.path.dirname(__file__), i)               # Finds path of wordlist
-        with open(path, "r", encoding="utf-8") as pass_file:
-            passwords = pass_file.read().split("\n")                    # Converts txt file to a list
-        if pswd in passwords:                                           # Checks if the password in a common wordlist
-            print(f"{pswd} was found in a list of common passwords!")
-            return 0
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as pass_file:
+                passwords = pass_file.read().split("\n")                    # Converts txt file to a list
+            if pswd in passwords:                                           # Checks if the password in a common wordlist
+                print("This password was found in a list of common passwords!")
+                return 0
+        else:
+            print(f"The file {_f} was not found!")
 
 def check_strength(pswd, _files):
     if password_leaked(pswd, _files):
         return 0
 
     # Adds points for each distinct type of characters, length of password
-    strength = 2
+    strength = 1
     if len(pswd) >= 8:
-        strength += 2
+        strength += 1
     strength += int(len(pswd) >= 18)
-    strength += check_contains(pswd, "abcdefghijklmnopqrstuvwxyz") + check_contains(pswd, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-    strength += check_contains(pswd, " 1234567890") + check_contains(pswd, '!@#$%^&*()-=_+"') + check_contains(pswd, r"[]{}\\:;',./?")
+    strength += check_contains(pswd, "abcdefghijklmnopqrstuvwxyz") + 2*check_contains(pswd, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    strength += check_contains(pswd, " 1234567890") + 2*check_contains(pswd, '!@#$%^&*()-=_+"') + check_contains(pswd, r"[]{}\\:;',./?")
     return strength
 
 # ARGUMENT PARSER
