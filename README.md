@@ -2,7 +2,7 @@
 
 This program helps us to find out how strong a password is on a scale of 0 to 10.
 
-Created by [@A-Proper-programmer] (https://github.com/A-Proper-programmer).
+Created by `@A-Proper-programmer` (https://github.com/A-Proper-programmer).
 
 ## Features
 - **Leaked:** Checks if the password is in a list of common passwords
@@ -15,8 +15,8 @@ Created by [@A-Proper-programmer] (https://github.com/A-Proper-programmer).
 
 ## Installation
 ```bash
-git clone https://github.com/A-Proper-programmer/Python-Projects.git
-cd Python-Projects
+git clone https://github.com/A-Proper-programmer/Password-Strength-Evaluator.git
+cd Password-Strength-Evaluator
 ```
 
 ## Usage
@@ -32,5 +32,6 @@ project/
 ```
 
 ## Author and Credits
-Author [@A-Proper-programmer](https://github.com/A-Proper-programmer)
-rockyou.txt [@josuamarcelc](https://github.com/josuamarcelc)
+Author `@A-Proper-programmer` (https://github.com/A-Proper-programmer)
+
+Wordlist `@josuamarcelc` (https://github.com/josuamarcelc)
